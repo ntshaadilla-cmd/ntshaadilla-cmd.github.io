@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natasha Adilla — B2B Marketing</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #FAFAF7;
+  --bg2: #F3F2ED;
+  --bg3: #ECEAE2;
+  --surface: #FFFFFF;
+  --border: #E5E3DA;
+  --border2: #D4D1C5;
+  --ink: #1A1814;
+  --ink2: #3D3A32;
+  --muted: #8A8578;
+  --dim: #B8B4A8;
+  --accent: #C4561A;
+  --accent-light: #FBF0EA;
+  --accent2: #E07A47;
+  --green: #2B7A52;
+  --green-light: #EBF5F0;
+  --navy: #1C3A5E;
+  --navy-light: #EBF0F7;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+img { max-width: 100%; }
+a { color: inherit; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 3.5rem;
+  background: rgba(250,250,247,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); text-decoration: none; font-weight: 300; letter-spacing: 0.01em; }
+.logo em { color: var(--accent); font-style: italic; }
+.nav-links { display: flex; gap: 2.25rem; list-style: none; }
+.nav-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.18s; }
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  font-size: 0.78rem; color: var(--surface); background: var(--ink);
+  padding: 0.5rem 1.25rem; border-radius: 2rem; text-decoration: none;
+  letter-spacing: 0.04em; transition: background 0.18s;
+}
+.nav-cta:hover { background: var(--accent); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  padding: 9rem 3.5rem 5.5rem;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  position: relative; overflow: hidden;
+  background: var(--bg);
+}
+.hero-noise {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-ring {
+  position: absolute; right: -180px; top: 50%; transform: translateY(-50%);
+  width: 600px; height: 600px; border-radius: 50%;
+  border: 1px solid var(--border2);
+  opacity: 0.5; pointer-events: none;
+}
+.hero-ring2 {
+  position: absolute; right: -60px; top: 50%; transform: translateY(-50%);
+  width: 360px; height: 360px; border-radius: 50%;
+  border: 1px solid var(--border);
+  opacity: 0.7; pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 2; max-width: 820px; }
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 0.65rem;
+  font-size: 0.73rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 2rem;
+}
+.hero-kicker::before { content: ''; width: 28px; height: 1px; background: var(--accent); display: block; }
+h1.hero-hed {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(3.8rem, 7.5vw, 7.5rem);
+  line-height: 0.96; letter-spacing: -0.03em;
+  color: var(--ink); margin-bottom: 1.75rem;
+}
+h1.hero-hed em { font-style: italic; color: var(--muted); }
+.hero-bio {
+  font-size: 1.05rem; color: var(--ink2);
+  max-width: 500px; line-height: 1.8; margin-bottom: 3rem;
+  font-weight: 300;
+}
+.hero-stats {
+  display: flex; gap: 0;
+  border: 1px solid var(--border2); border-radius: 0.85rem;
+  overflow: hidden; width: fit-content; margin-bottom: 2.75rem;
+  background: var(--surface);
+}
+.hstat { padding: 1.2rem 1.9rem; border-right: 1px solid var(--border); }
+.hstat:last-child { border-right: none; }
+.hstat-n { font-family: var(--serif); font-size: 2rem; color: var(--ink); line-height: 1; margin-bottom: 0.25rem; font-weight: 300; }
+.hstat-l { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.03em; line-height: 1.4; max-width: 120px; }
+.hero-btns { display: flex; gap: 0.9rem; }
+.btn-solid {
+  font-size: 0.83rem; color: var(--surface); background: var(--ink);
+  padding: 0.8rem 1.75rem; border-radius: 2rem; text-decoration: none;
+  transition: background 0.18s; letter-spacing: 0.02em;
+}
+.btn-solid:hover { background: var(--accent); }
+.btn-line {
+  font-size: 0.83rem; color: var(--muted);
+  padding: 0.8rem 1.75rem; border-radius: 2rem; text-decoration: none;
+  border: 1px solid var(--border2); transition: all 0.18s; letter-spacing: 0.02em;
+}
+.btn-line:hover { border-color: var(--ink2); color: var(--ink); }
+
+/* ABOUT */
+#about { padding: 5.5rem 3.5rem; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.about-wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 5rem; align-items: start; }
+.about-body { font-size: 1rem; color: var(--ink2); line-height: 1.85; font-weight: 300; }
+.about-body p + p { margin-top: 1.2rem; }
+.about-body strong { color: var(--ink); font-weight: 500; }
+.about-meta { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: 0.85rem; overflow: hidden; }
+.ameta-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 1rem 1.35rem; border-bottom: 1px solid var(--border); }
+.ameta-row:last-child { border-bottom: none; }
+.ameta-lbl { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; flex-shrink: 0; }
+.ameta-val { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); font-weight: 300; text-align: right; }
+
+/* SECTION SHARED */
+.sec-pad { padding: 5.5rem 3.5rem; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 0.9rem;
+}
+.eyebrow::before { content: ''; width: 18px; height: 1px; background: var(--accent); display: block; }
+.sec-hed {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.1; color: var(--ink); margin-bottom: 0.85rem; letter-spacing: -0.02em;
+}
+.sec-hed em { font-style: italic; color: var(--muted); }
+.sec-dek { font-size: 0.95rem; color: var(--muted); max-width: 500px; line-height: 1.8; margin-bottom: 3.5rem; font-weight: 300; }
+
+/* WORK TABLE */
+#work { background: var(--bg); }
+.work-table { border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; }
+.work-row {
+  display: grid; grid-template-columns: 2fr 0.55fr 0.55fr;
+  padding: 2.25rem 2rem; border-bottom: 1px solid var(--border);
+  gap: 2rem; align-items: start; background: var(--surface);
+  transition: background 0.18s;
+}
+.work-row:last-child { border-bottom: none; }
+.work-row:hover { background: var(--bg2); }
+.work-row.lead { background: var(--bg2); }
+.work-row.lead:hover { background: var(--bg3); }
+.widx { font-size: 0.68rem; color: var(--dim); letter-spacing: 0.07em; margin-bottom: 0.65rem; }
+.wtitle { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); margin-bottom: 0.6rem; line-height: 1.3; font-weight: 300; }
+.work-row.lead .wtitle { font-size: 1.3rem; }
+.wdesc { font-size: 0.84rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
+.wtags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.85rem; }
+.wtag {
+  font-size: 0.67rem; padding: 0.2rem 0.62rem; border-radius: 2rem;
+  border: 1px solid var(--border2); color: var(--muted); letter-spacing: 0.04em;
+}
+.wtag.a { border-color: rgba(196,86,26,0.3); color: var(--accent); background: var(--accent-light); }
+.wtag.g { border-color: rgba(43,122,82,0.25); color: var(--green); background: var(--green-light); }
+.wtag.b { border-color: rgba(28,58,94,0.2); color: var(--navy); background: var(--navy-light); }
+.wmet-col { display: flex; flex-direction: column; gap: 0.75rem; }
+.wmet {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 0.65rem; padding: 0.9rem 1rem;
+}
+.wmet-n { font-family: var(--serif); font-size: 1.5rem; color: var(--accent); line-height: 1; margin-bottom: 0.2rem; font-weight: 300; }
+.wmet-l { font-size: 0.67rem; color: var(--muted); line-height: 1.3; }
+.wctx { font-size: 0.78rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+.wco { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dim); margin-bottom: 0.5rem; }
+
+/* AI DASHBOARD CALLOUT */
+.ai-callout {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 1rem; padding: 2rem 2.25rem;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 2.5rem; align-items: center;
+  margin-bottom: 1rem;
+}
+.ai-callout-left {}
+.ai-tag-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+.ai-badge {
+  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.2rem 0.65rem; border-radius: 2rem;
+  background: var(--accent-light); color: var(--accent);
+  border: 1px solid rgba(196,86,26,0.25);
+}
+.ai-callout-title { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); margin-bottom: 0.6rem; font-weight: 300; }
+.ai-callout-body { font-size: 0.87rem; color: var(--muted); line-height: 1.75; max-width: 560px; font-weight: 300; }
+.ai-callout-tools { display: flex; gap: 0.5rem; margin-top: 0.9rem; flex-wrap: wrap; }
+.ai-tool { font-size: 0.68rem; padding: 0.22rem 0.65rem; border-radius: 2rem; border: 1px solid var(--border2); color: var(--muted); }
+.ai-screen {
+  background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: 0.75rem; padding: 1.25rem 1.5rem;
+  min-width: 200px; text-align: center;
+}
+.ai-screen-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--dim); margin-bottom: 0.75rem; }
+.ai-screen-row { display: flex; justify-content: space-between; font-size: 0.78rem; padding: 0.35rem 0; border-bottom: 1px solid var(--border); }
+.ai-screen-row:last-child { border-bottom: none; }
+.ai-screen-key { color: var(--muted); }
+.ai-screen-val { color: var(--ink); font-family: var(--serif); font-weight: 300; }
+
+/* CAPABILITIES */
+#capabilities { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; }
+.cap-cell { background: var(--surface); padding: 2rem; transition: background 0.18s; }
+.cap-cell:hover { background: var(--bg2); }
+.cap-dot { width: 8px; height: 8px; border-radius: 50%; margin-bottom: 1.15rem; }
+.cap-dot.o { background: var(--accent); }
+.cap-dot.g { background: var(--green); }
+.cap-dot.b { background: var(--navy); }
+.cap-title { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); margin-bottom: 0.55rem; font-weight: 300; line-height: 1.3; }
+.cap-body { font-size: 0.82rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
+.cap-tools { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.9rem; }
+.ctool { font-size: 0.67rem; color: var(--muted); border: 1px solid var(--border2); padding: 0.2rem 0.58rem; border-radius: 2rem; }
+.ctool.ai { border-color: rgba(196,86,26,0.3); color: var(--accent); }
+
+.skills-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; margin-top: 1px; }
+.sk-col { background: var(--surface); padding: 1.5rem 1.75rem; }
+.sk-col-title { font-size: 0.67rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--dim); margin-bottom: 0.9rem; }
+.sk-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--muted); padding: 0.3rem 0; border-bottom: 1px solid var(--border); font-weight: 300; }
+.sk-item:last-child { border-bottom: none; }
+.sk-d { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.sk-o { background: var(--accent); }
+.sk-g { background: var(--green); }
+.sk-b { background: var(--navy); }
+.sk-w { background: var(--dim); }
+
+/* CERTS */
+.certs-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+.cert { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--muted); background: var(--bg2); border: 1px solid var(--border); padding: 0.35rem 0.85rem; border-radius: 2rem; font-weight: 300; }
+.cert-check { color: var(--green); font-weight: 500; }
+
+/* CONTACT */
+#contact { background: var(--bg2); border-top: 1px solid var(--border); }
+.contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.contact-hed { font-family: var(--serif); font-size: clamp(2.5rem, 4.5vw, 4.5rem); line-height: 1.05; color: var(--ink); font-weight: 300; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+.contact-hed em { font-style: italic; color: var(--muted); }
+.contact-dek { font-size: 0.95rem; color: var(--muted); line-height: 1.8; font-weight: 300; }
+.clinks { display: flex; flex-direction: column; gap: 0.65rem; }
+.clink {
+  display: flex; align-items: center; gap: 1rem;
+  text-decoration: none; color: var(--ink2);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 0.75rem; padding: 1.1rem 1.4rem;
+  font-size: 0.9rem; transition: all 0.18s;
+}
+.clink:hover { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+.clink-ico { width: 20px; color: var(--muted); font-size: 0.9rem; flex-shrink: 0; }
+.clink strong { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.1rem; color: var(--muted); }
+.clink span { color: var(--ink); font-weight: 300; }
+
+/* FOOTER */
+footer { background: var(--surface); border-top: 1px solid var(--border); padding: 1.5rem 3.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--dim); }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">Natasha <em>Adilla</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#capabilities">Capabilities</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://www.linkedin.com/in/natasha-adilla-putri" target="_blank" rel="noopener" class="nav-cta">Connect on LinkedIn</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-noise"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-ring2"></div>
+  <div class="hero-inner reveal">
+    <div class="hero-kicker">B2B Marketing · Marine &amp; Industrial</div>
+    <h1 class="hero-hed">Strategy,<br>campaigns,<br><em>results.</em></h1>
+    <p class="hero-bio">I own B2B marketing end-to-end — from LATAM market entry strategy to LinkedIn campaigns, paid media, and AI-assisted content operations at Trelleborg Marine &amp; Infrastructure.</p>
+    <div class="hero-stats reveal d1">
+      <div class="hstat">
+        <div class="hstat-n">85%</div>
+        <div class="hstat-l">LinkedIn growth over 3 years</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n">250%+</div>
+        <div class="hstat-l">Engagement vs. direct competitors</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n">256K</div>
+        <div class="hstat-l">Campaign impressions, SafePilot</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n">5+</div>
+        <div class="hstat-l">Years in B2B marketing</div>
+      </div>
+    </div>
+    <div class="hero-btns reveal d2">
+      <a href="#work" class="btn-solid">View work</a>
+      <a href="https://www.linkedin.com/in/natasha-adilla-putri" target="_blank" rel="noopener" class="btn-line">Connect on LinkedIn →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-wrap">
+    <div class="about-body reveal">
+      <p>Five years in B2B marketing across marine infrastructure, broadcast media, industrial safety, and water utilities. I started in digital execution and grew into strategy — owning full-funnel campaigns, regional market-entry programmes, and AI-assisted marketing workflows.</p>
+      <p>At <strong>Trelleborg Marine &amp; Infrastructure</strong>, I manage LinkedIn across the main company page and the Gas Transfer showcase page, run paid campaigns across multiple product lines, and led the design and activation of a <strong>go-to-market programme for Latin America</strong> spanning Brazil, Chile, Peru, Colombia, and Mexico.</p>
+      <p>I also built an <strong>AI-powered intelligence dashboard</strong> for the Gas Transfer business — a monthly market and content briefing tool that surfaces industry news, competitor signals, content angles, social post ideas, and strategic priorities, organised by product pillar.</p>
+    </div>
+    <div class="about-meta reveal d1">
+      <div class="ameta-row">
+        <span class="ameta-lbl">Company</span>
+        <span class="ameta-val">Trelleborg Marine &amp; Infrastructure</span>
+      </div>
+      <div class="ameta-row">
+        <span class="ameta-lbl">Location</span>
+        <span class="ameta-val">Singapore</span>
+      </div>
+      <div class="ameta-row">
+        <span class="ameta-lbl">Specialisms</span>
+        <span class="ameta-val">GTM, LinkedIn, Paid Media, AI Ops</span>
+      </div>
+      <div class="ameta-row">
+        <span class="ameta-lbl">Previous sectors</span>
+        <span class="ameta-val">Media Tech, Safety &amp; Industrial, Water</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="sec-pad">
+  <div class="reveal">
+    <div class="eyebrow">Work</div>
+    <h2 class="sec-hed">Campaigns &amp; <em>strategy.</em></h2>
+    <p class="sec-dek">A selection of work at Trelleborg and previous roles. Numbers are pulled from campaign reports and analytics.</p>
+  </div>
+
+  <!-- AI DASHBOARD CALLOUT -->
+  <div class="ai-callout reveal">
+    <div class="ai-callout-left">
+      <div class="ai-tag-row">
+        <span class="ai-badge">AI-Built Tool</span>
+        <span style="font-size:0.72rem;color:var(--dim)">Trelleborg Gas Transfer · 2026</span>
+      </div>
+      <div class="ai-callout-title">Gas Transfer Intelligence Dashboard</div>
+      <p class="ai-callout-body">Built a monthly AI-powered market intelligence and content briefing tool for the Gas Transfer business unit. It surfaces industry news, competitor signals, content angles, social post ideas, and strategic priorities — all organised by product pillar (Operations Optimisation, Equipment Systems, Service &amp; Support, Crew Training). Delivered as a structured HTML output on a monthly cadence.</p>
+      <div class="ai-callout-tools">
+        <span class="ai-tool" style="border-color:rgba(196,86,26,0.3);color:var(--accent)">Claude AI</span>
+        <span class="ai-tool">HTML Dashboard</span>
+        <span class="ai-tool">Market Intelligence</span>
+        <span class="ai-tool">Content Briefing</span>
+        <span class="ai-tool">4-Pillar Structure</span>
+      </div>
+    </div>
+    <div class="ai-screen">
+      <div class="ai-screen-label">Dashboard · May 2026</div>
+      <div class="ai-screen-row"><span class="ai-screen-key">Pillars</span><span class="ai-screen-val">4</span></div>
+      <div class="ai-screen-row"><span class="ai-screen-key">Topics covered</span><span class="ai-screen-val">14</span></div>
+      <div class="ai-screen-row"><span class="ai-screen-key">Social ideas</span><span class="ai-screen-val">8</span></div>
+      <div class="ai-screen-row"><span class="ai-screen-key">Reporting period</span><span class="ai-screen-val">Monthly</span></div>
+    </div>
+  </div>
+
+  <div class="work-table reveal">
+
+    <div class="work-row lead">
+      <div>
+        <div class="widx">01 · Featured</div>
+        <div class="wtitle">LATAM Go-to-Market Programme</div>
+        <p class="wdesc">Full GTM design and activation for Trelleborg Marine's Latin America push. I owned this from discovery — competitive analysis, segment prioritisation across Gas Transfer, Dry Bulk, Container Terminals, and Cruise, value proposition development, bilingual content — through to paid campaign launch across LinkedIn and GDN, Eloqua nurture flows, PR placements in regional trade press, and a webinar series for Spanish-speaking decision-makers. Built the agent enablement toolkit distributed to partners across five markets.</p>
+        <div class="wtags">
+          <span class="wtag a">GTM Strategy</span>
+          <span class="wtag a">Market Entry</span>
+          <span class="wtag">Spanish-Language</span>
+          <span class="wtag">Full-Funnel</span>
+          <span class="wtag">LinkedIn + GDN</span>
+          <span class="wtag">Eloqua</span>
+          <span class="wtag">Agent Enablement</span>
+          <span class="wtag">Trade PR</span>
+        </div>
+      </div>
+      <div class="wmet-col">
+        <div class="wmet"><div class="wmet-n">5</div><div class="wmet-l">Markets: BR, CL, PE, CO, MX</div></div>
+        <div class="wmet"><div class="wmet-n">4</div><div class="wmet-l">Segments activated</div></div>
+      </div>
+      <div>
+        <div class="wco">Trelleborg Marine &amp; Infrastructure</div>
+        <p class="wctx">Full ownership from competitive analysis through to campaign launch. Bilingual assets, PESTEL + SWOT analysis, per-segment messaging, and KPI framework. Jul 2025 onwards.</p>
+      </div>
+    </div>
+
+    <div class="work-row">
+      <div>
+        <div class="widx">02</div>
+        <div class="wtitle">TMI LinkedIn — 85% Follower Growth over 3 Years</div>
+        <p class="wdesc">Managed all organic and paid activity across Trelleborg Marine's company page and Gas Transfer showcase page. Built a content strategy grounded in quarterly performance data — people-led posts, engineering storytelling, and operational content consistently outperformed product-only posts. Ran the employee advocacy programme and the Meet the Pioneers thought leadership series. Outperformed direct competitors by over 250% on engagement.</p>
+        <div class="wtags">
+          <span class="wtag a">Organic LinkedIn</span>
+          <span class="wtag">Employee Advocacy</span>
+          <span class="wtag">Showcase Pages</span>
+          <span class="wtag">Content Strategy</span>
+          <span class="wtag">Quarterly Reporting</span>
+        </div>
+      </div>
+      <div class="wmet-col">
+        <div class="wmet"><div class="wmet-n">85%</div><div class="wmet-l">Follower growth · 3 years</div></div>
+        <div class="wmet"><div class="wmet-n">250%+</div><div class="wmet-l">vs direct competitors</div></div>
+      </div>
+      <div>
+        <div class="wco">Trelleborg Marine &amp; Infrastructure</div>
+        <p class="wctx">Two LinkedIn properties managed concurrently. 10% average engagement rate. Ongoing since May 2023.</p>
+      </div>
+    </div>
+
+    <div class="work-row">
+      <div>
+        <div class="widx">03</div>
+        <div class="wtitle">Meet the Pioneers — Employee Advocacy &amp; Brand Campaign</div>
+        <p class="wdesc">Designed and ran a people-led brand campaign to humanise Trelleborg Marine across the Americas. Produced thought-leadership features profiling regional experts, built advocacy toolkits for agents and staff, and drove LinkedIn editorial. Posts consistently hit 7–8% engagement rate — well above B2B benchmarks — across 12K+ impressions and 3 active contributors. Part of the broader LATAM brand awareness push.</p>
+        <div class="wtags">
+          <span class="wtag a">Brand Campaign</span>
+          <span class="wtag">Thought Leadership</span>
+          <span class="wtag">Employee Advocacy</span>
+          <span class="wtag g">LATAM Focus</span>
+        </div>
+      </div>
+      <div class="wmet-col">
+        <div class="wmet"><div class="wmet-n">7–8%</div><div class="wmet-l">Engagement rate per post</div></div>
+        <div class="wmet"><div class="wmet-n">12K+</div><div class="wmet-l">Total impressions</div></div>
+      </div>
+      <div>
+        <div class="wco">Trelleborg Marine &amp; Infrastructure</div>
+        <p class="wctx">Aug–Dec 2025. 3 expert profiles. Bounce rates as low as 19% on article pages.</p>
+      </div>
+    </div>
+
+    <div class="work-row">
+      <div>
+        <div class="widx">04</div>
+        <div class="wtitle">SafePilot Spoofing &amp; Jamming — Full-Funnel LinkedIn Campaign</div>
+        <p class="wdesc">Built a 3-stage LinkedIn campaign for SafePilot, Trelleborg's maritime navigation product. Designed the audience strategy, managed $7K SGD across awareness, consideration, and conversion. Targeted marine pilots, harbour masters, fleet operators, and port directors at major global operators. Awareness phase delivered 5× the estimated impression forecast.</p>
+        <div class="wtags">
+          <span class="wtag">LinkedIn Ads</span>
+          <span class="wtag">Audience Strategy</span>
+          <span class="wtag">InMail</span>
+          <span class="wtag">Retargeting</span>
+          <span class="wtag">Lead Gen</span>
+        </div>
+      </div>
+      <div class="wmet-col">
+        <div class="wmet"><div class="wmet-n">256K</div><div class="wmet-l">Impressions · 5× forecast</div></div>
+        <div class="wmet"><div class="wmet-n">11</div><div class="wmet-l">Qualified leads generated</div></div>
+      </div>
+      <div>
+        <div class="wco">Trelleborg Marine &amp; Infrastructure</div>
+        <p class="wctx">6-week campaign · $7,000 SGD · 3 stages. 18K video views. CPL within B2B benchmark.</p>
+      </div>
+    </div>
+
+    <div class="work-row">
+      <div>
+        <div class="widx">05</div>
+        <div class="wtitle">SEO Overhaul &amp; Digital Rebuild — Ansac Technology</div>
+        <p class="wdesc">Took full ownership of Ansac's SEO strategy, website architecture, and email marketing. Delivered 52% increase in organic traffic, 33% lift in goal completions, and 20.3% surge in online sales within the year. Also redesigned the email programme based on engagement data and managed a new payment portal implementation.</p>
+        <div class="wtags">
+          <span class="wtag">SEO</span>
+          <span class="wtag">Email Marketing</span>
+          <span class="wtag">UX Redesign</span>
+          <span class="wtag">Analytics</span>
+        </div>
+      </div>
+      <div class="wmet-col">
+        <div class="wmet"><div class="wmet-n">52%</div><div class="wmet-l">Organic traffic increase</div></div>
+        <div class="wmet"><div class="wmet-n">20.3%</div><div class="wmet-l">Online sales uplift</div></div>
+      </div>
+      <div>
+        <div class="wco">Ansac Technology (S) Pte. Ltd.</div>
+        <p class="wctx">May 2022 – May 2023. Safety, PPE, measurement &amp; analysis sector.</p>
+      </div>
+    </div>
+
+    <div class="work-row">
+      <div>
+        <div class="widx">06</div>
+        <div class="wtitle">B2B Marketplace Growth — Vuulr</div>
+        <p class="wdesc">Developed monthly retargeting campaigns that drove marketplace sales of 9,000+ hours of licensed content to global B2B buyers. Managed all digital platforms, SEM monitoring, and weekly email blasts to buyers and sellers across the marketplace.</p>
+        <div class="wtags">
+          <span class="wtag">Retargeting</span>
+          <span class="wtag">Social Ads</span>
+          <span class="wtag">Marketplace GTM</span>
+          <span class="wtag">Email</span>
+        </div>
+      </div>
+      <div class="wmet-col">
+        <div class="wmet"><div class="wmet-n">9K+</div><div class="wmet-l">Hours of content sold</div></div>
+      </div>
+      <div>
+        <div class="wco">Vuulr · Entertainment &amp; Media Tech</div>
+        <p class="wctx">Sep 2021 – May 2022. B2B content licensing marketplace.</p>
+      </div>
+    </div>
+
+    <div class="work-row">
+      <div>
+        <div class="widx">07</div>
+        <div class="wtitle">Multi-Channel Social &amp; Digital Campaigns — Blue Ant Media</div>
+        <p class="wdesc">Managed social media content and digital campaigns across 5 broadcast channels — including Love Nature 4K, Smithsonian Channel, and Blue Ant Entertainment — on Instagram, Facebook, Twitter, and web. Conceptualised content buckets, built weekly scheduling across all properties, and executed campaigns that grew engagement rates across the network. Successfully monetised the Love Nature 4K YouTube channel, turning it into a revenue-generating property. Collaborated with affiliates on 10+ online promotions, sweepstakes, and giveaway activations. Notable campaigns included Love Nature 4K's #StandOrange, the Star Trek Premiere, and Smithsonian's #WomenHistoryMonth. Produced regular digital performance reports and contributed to channel strategy direction.</p>
+        <div class="wtags">
+          <span class="wtag">Social Media</span>
+          <span class="wtag">Content Strategy</span>
+          <span class="wtag">Digital Campaigns</span>
+          <span class="wtag a">YouTube Monetisation</span>
+          <span class="wtag">Affiliate Promotions</span>
+          <span class="wtag">Analytics</span>
+        </div>
+      </div>
+      <div class="wmet-col">
+        <div class="wmet"><div class="wmet-n">5</div><div class="wmet-l">Broadcast channels managed</div></div>
+        <div class="wmet"><div class="wmet-n">10+</div><div class="wmet-l">Affiliate promotions &amp; activations</div></div>
+      </div>
+      <div>
+        <div class="wco">Blue Ant Media · Broadcast &amp; Entertainment</div>
+        <p class="wctx">Jun 2019 – Mar 2020. Multi-channel social and digital across Love Nature 4K, Smithsonian, Makeful, and Blue Ant Entertainment.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities" class="sec-pad">
+  <div class="reveal">
+    <div class="eyebrow">Capabilities</div>
+    <h2 class="sec-hed">What I <em>bring.</em></h2>
+    <p class="sec-dek">Across strategy, execution, and the tools that sit in between.</p>
+  </div>
+
+  <div class="cap-grid reveal">
+    <div class="cap-cell">
+      <div class="cap-dot o"></div>
+      <div class="cap-title">AI-Assisted Marketing Ops</div>
+      <p class="cap-body">Built an AI intelligence dashboard using Claude for the Gas Transfer business — automated market research, content briefing, and social ideation by pillar. Using Jasper for copy at scale, Perplexity for research, Surfer SEO for content optimisation, HeyGen for video, and Canva Magic Studio for creative.</p>
+      <div class="cap-tools">
+        <span class="ctool ai">Claude AI</span>
+        <span class="ctool ai">Jasper</span>
+        <span class="ctool ai">Perplexity</span>
+        <span class="ctool ai">Surfer SEO</span>
+        <span class="ctool ai">Canva Magic Studio</span>
+        <span class="ctool ai">HeyGen</span>
+        <span class="ctool ai">Microsoft Copilot</span>
+      </div>
+    </div>
+    <div class="cap-cell">
+      <div class="cap-dot g"></div>
+      <div class="cap-title">Regional GTM &amp; Market Entry</div>
+      <p class="cap-body">Full go-to-market design from scratch — segment prioritisation, competitive analysis, value proposition per audience, bilingual campaign architecture, agent enablement kits, and reporting frameworks aligned to sales pipeline.</p>
+      <div class="cap-tools">
+        <span class="ctool">PESTEL / SWOT</span>
+        <span class="ctool">Pipeline Analysis</span>
+        <span class="ctool">Bilingual Content</span>
+      </div>
+    </div>
+    <div class="cap-cell">
+      <div class="cap-dot b"></div>
+      <div class="cap-title">LinkedIn &amp; Paid Social</div>
+      <p class="cap-body">End-to-end campaign management. Full-funnel structure, audience segmentation, retargeting, InMail, lead gen forms, video campaigns, and quarterly performance reporting against CPL, CTR, and engagement benchmarks.</p>
+      <div class="cap-tools">
+        <span class="ctool">Campaign Manager</span>
+        <span class="ctool">Meta Ads</span>
+        <span class="ctool">Google Ads / GDN</span>
+        <span class="ctool">Sprout Social</span>
+        <span class="ctool">Hootsuite</span>
+      </div>
+    </div>
+    <div class="cap-cell">
+      <div class="cap-dot o"></div>
+      <div class="cap-title">B2B Content &amp; Messaging</div>
+      <p class="cap-body">Technical products, made readable. Campaign copy, LinkedIn editorial, thought leadership series, email sequences, and segment-specific messaging frameworks. Cross-sector experience in marine, industrial, SaaS, and media.</p>
+      <div class="cap-tools">
+        <span class="ctool">Campaign Copy</span>
+        <span class="ctool">Thought Leadership</span>
+        <span class="ctool">Spanish Localisation</span>
+      </div>
+    </div>
+    <div class="cap-cell">
+      <div class="cap-dot g"></div>
+      <div class="cap-title">Email Automation &amp; Nurture</div>
+      <p class="cap-body">Nurture flows, onboarding sequences, and campaign emails on Eloqua, Mailchimp, and Autopilot. Audience segmentation, A/B testing, and conversion-focused structure from awareness through to sales handover.</p>
+      <div class="cap-tools">
+        <span class="ctool">Eloqua</span>
+        <span class="ctool">Mailchimp</span>
+        <span class="ctool">Autopilot</span>
+      </div>
+    </div>
+    <div class="cap-cell">
+      <div class="cap-dot b"></div>
+      <div class="cap-title">Analytics &amp; Reporting</div>
+      <p class="cap-body">Quarterly marketing reports, campaign dashboards, and data-led recommendations. Google Analytics, Power BI, LinkedIn native analytics, and CRM pipeline tracking. Built the KPI and reporting structure for the LATAM programme.</p>
+      <div class="cap-tools">
+        <span class="ctool">Google Analytics</span>
+        <span class="ctool">Power BI</span>
+        <span class="ctool">Salesforce</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="skills-strip reveal">
+    <div class="sk-col">
+      <div class="sk-col-title">AI &amp; Automation</div>
+      <div class="sk-item"><span class="sk-d sk-o"></span>Claude AI</div>
+      <div class="sk-item"><span class="sk-d sk-o"></span>Jasper</div>
+      <div class="sk-item"><span class="sk-d sk-o"></span>Perplexity</div>
+      <div class="sk-item"><span class="sk-d sk-o"></span>Surfer SEO</div>
+      <div class="sk-item"><span class="sk-d sk-o"></span>Canva Magic Studio</div>
+      <div class="sk-item"><span class="sk-d sk-o"></span>HeyGen</div>
+      <div class="sk-item"><span class="sk-d sk-o"></span>Microsoft Copilot</div>
+    </div>
+    <div class="sk-col">
+      <div class="sk-col-title">Paid &amp; Social</div>
+      <div class="sk-item"><span class="sk-d sk-g"></span>LinkedIn Campaign Manager</div>
+      <div class="sk-item"><span class="sk-d sk-g"></span>Meta Ads Manager</div>
+      <div class="sk-item"><span class="sk-d sk-g"></span>Google Ads</div>
+      <div class="sk-item"><span class="sk-d sk-g"></span>Sprout Social</div>
+      <div class="sk-item"><span class="sk-d sk-g"></span>Hootsuite</div>
+      <div class="sk-item"><span class="sk-d sk-g"></span>Meltwater</div>
+    </div>
+    <div class="sk-col">
+      <div class="sk-col-title">Analytics &amp; CRM</div>
+      <div class="sk-item"><span class="sk-d sk-b"></span>Google Analytics</div>
+      <div class="sk-item"><span class="sk-d sk-b"></span>Power BI</div>
+      <div class="sk-item"><span class="sk-d sk-b"></span>Salesforce</div>
+      <div class="sk-item"><span class="sk-d sk-b"></span>SAP</div>
+      <div class="sk-item"><span class="sk-d sk-b"></span>Microsoft Excel</div>
+    </div>
+    <div class="sk-col">
+      <div class="sk-col-title">Creative &amp; CMS</div>
+      <div class="sk-item"><span class="sk-d sk-w"></span>Adobe Suite</div>
+      <div class="sk-item"><span class="sk-d sk-w"></span>Canva</div>
+      <div class="sk-item"><span class="sk-d sk-w"></span>WordPress / Duda</div>
+      <div class="sk-item"><span class="sk-d sk-w"></span>Monday.com / JIRA</div>
+      <div class="sk-item"><span class="sk-d sk-w"></span>Brightcove</div>
+    </div>
+  </div>
+
+  <div class="certs-row reveal">
+    <span class="cert"><span class="cert-check">✓</span>Google Analytics IQ</span>
+    <span class="cert"><span class="cert-check">✓</span>Google Ads Search Certification</span>
+    <span class="cert"><span class="cert-check">✓</span>WSQ E-Commerce Campaign Management</span>
+    <span class="cert"><span class="cert-check">✓</span>WSQ FirstCom Google Analytics</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec-pad">
+  <div class="contact-wrap">
+    <div class="reveal">
+      <h2 class="contact-hed">Let's talk<br><em>B2B marketing.</em></h2>
+      <p class="contact-dek">Whether it's a campaign brief, a GTM challenge, or a role worth discussing — I'm reachable. Best way in is LinkedIn or email.</p>
+    </div>
+    <div class="clinks reveal d1">
+      <a href="https://www.linkedin.com/in/natasha-adilla-putri" target="_blank" rel="noopener" class="clink">
+        <span class="clink-ico">↗</span>
+        <span><strong>LinkedIn</strong><span>linkedin.com/in/natasha-adilla-putri</span></span>
+      </a>
+      <a href="mailto:ntshaadilla@gmail.com" class="clink">
+        <span class="clink-ico">✉</span>
+        <span><strong>Email</strong><span>ntshaadilla@gmail.com</span></span>
+      </a>
+      <a href="tel:+6585010127" class="clink">
+        <span class="clink-ico">◉</span>
+        <span><strong>Phone</strong><span>+65 8501 0127</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Natasha Adilla Putri · Singapore</span>
+  <span>B2B Marketing · Marine &amp; Industrial · 2026</span>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
