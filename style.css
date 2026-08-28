@@ -604,3 +604,84 @@ figure.fig figcaption {
   .fig-t--sm   { font-size: 13.5px; }
   .fig-t--xs   { font-size: 12px; }
 }
+
+/* ============================================================
+   screenshots — drop a correctly named file into images/ and
+   the placeholder disappears on its own. No HTML editing.
+   ============================================================ */
+
+figure.shot {
+  margin: clamp(1.75rem, 3.5vw, 2.5rem) 0;
+  max-width: 44rem;
+}
+figure.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  background: var(--bg-panel, var(--band-quiet));
+}
+figure.shot figcaption {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--fg-faint);
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--rule);
+  max-width: 52ch;
+}
+
+/* A missing image collapses silently for visitors. The brief only appears
+   on localhost or with ?shots=1 on the URL, so nothing unfinished ships. */
+figure.shot.is-empty { display: none; }
+
+/* the placeholder is hidden until the image 404s */
+.shot-ph { display: none; }
+figure.shot.is-missing img { display: none; }
+figure.shot.is-missing .shot-ph {
+  display: block;
+  border: 2px dashed var(--accent);
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  min-height: 12rem;
+}
+.shot-ph-tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FBFDF9;
+  background: var(--accent);
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0.9rem;
+}
+.shot-ph h4 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--fg);
+  margin: 0 0 0.45em;
+}
+.shot-ph p { font-size: 0.9375rem; color: var(--fg-soft); margin: 0 0 0.6em; max-width: 46ch; }
+.shot-ph p:last-child { margin-bottom: 0; }
+.shot-ph .spec {
+  font-size: 0.8125rem;
+  color: var(--fg-faint);
+  border-top: 1px solid var(--rule);
+  padding-top: 0.7rem;
+  margin-top: 0.9rem;
+}
+.shot-ph .spec b { color: var(--fg-soft); font-weight: 700; }
+.shot-ph code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85em;
+  background: color-mix(in srgb, var(--fg) 8%, transparent);
+  padding: 0.1em 0.35em;
+}
+
+/* two side by side where the content suits it */
+.shot-pair { display: grid; gap: 1.25rem; grid-template-columns: 1fr; max-width: 44rem; }
+@media (min-width: 46rem) { .shot-pair { grid-template-columns: 1fr 1fr; } }
+.shot-pair figure.shot { margin: 0; max-width: none; }
