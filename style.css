@@ -173,9 +173,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--link); outline-
 .actions { display: flex; flex-wrap: wrap; gap: .85rem; }
 
 /* the hero shows the work: a muted loop from the corporate profile */
-.hero-work { display: block; padding: clamp(.5rem, 1.2vw, .8rem); color: var(--ink); text-decoration: none; rotate: 1.5deg; transition: rotate .3s var(--ease); }
-@media (hover: hover) and (pointer: fine) { .hero-work:hover { rotate: 0deg; } }
-@media (max-width: 57.99rem) { .hero-work { rotate: 0deg; } }
+.hero-work { display: block; padding: clamp(.5rem, 1.2vw, .8rem); color: var(--ink); text-decoration: none; }
 .hero-work video { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: calc(var(--r-lg) - 10px); background: var(--ink); }
 .hero-work-cap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .2rem 1rem; font-size: .85rem; color: var(--ink-soft); margin: .75rem .5rem .25rem; }
 .hero-work-cap b { color: var(--ink); font-weight: 600; }
@@ -683,4 +681,50 @@ body.cs .bubbles { z-index: 0; }
 @media (hover: hover) and (pointer: fine) {
   .index a:hover b, .index a:hover::after { color: var(--link); }
   .index a:hover::after { transform: translateX(4px); }
+}
+
+/* AI desk: the system map. One core, five stages on a ring, two human gates.
+   Desktop places the stages on the ring; below 58rem it becomes a stacked list. */
+.eco { position: relative; padding: clamp(1.25rem, 3vw, 2rem); overflow: hidden; }
+.eco-lines { display: none; }
+.eco-core, .eco-node { position: relative; display: flex; flex-direction: column; gap: .25rem; }
+.eco-k { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+.eco-core b, .eco-node b { font-weight: 600; font-size: 1.08rem; line-height: 1.2; }
+.eco-core span:last-child, .eco-node span:last-child { font-size: .86rem; line-height: 1.45; color: var(--ink-soft); }
+.eco-node { padding: 1rem 1.15rem; border-radius: var(--r-md); background: var(--glass-strong); border: 1px solid var(--glass-line); box-shadow: var(--shadow); margin-top: .75rem; }
+.eco-core { padding: 1.4rem 1.4rem 1.5rem; border-radius: var(--r-lg); background: var(--glass-dark); color: #fff; }
+.eco-core .eco-k, .eco-core span:last-child { color: rgba(255,255,255,.78); }
+.eco-core b { font-size: 1.35rem; letter-spacing: -0.02em; }
+.eco-gate { display: inline-flex; align-items: center; gap: .45rem; margin-top: .75rem; margin-right: .5rem; font-size: .8rem; font-weight: 600; padding: .4rem .8rem; border-radius: var(--r-pill); background: var(--glass-dark); color: #fff; }
+.eco-gate::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: #FFB8D6; }
+
+@media (min-width: 58rem) {
+  .eco { aspect-ratio: 16 / 10; padding: 0; }
+  .eco-lines { display: block; position: absolute; inset: 0; width: 100%; height: 100%; }
+  .eco-spokes path { stroke: rgba(15,27,38,.12); stroke-width: 1.2; fill: none; vector-effect: non-scaling-stroke; }
+  .eco-ring { fill: none; stroke: rgba(15,27,38,.1); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+  .eco-flow { fill: none; stroke: url(#eco-g); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 3 20; vector-effect: non-scaling-stroke; animation: eco-flow 18s linear infinite; }
+  .eco-spark { fill: #fff; stroke: #C6BDFF; stroke-width: 2; filter: drop-shadow(0 0 8px rgba(198,189,255,.95)); }
+  .eco-core, .eco-node, .eco-gate { position: absolute; left: var(--x, 50%); top: var(--y, 50%); translate: -50% -50%; margin: 0; }
+  .eco-core { width: clamp(13rem, 21vw, 16rem); aspect-ratio: 1; border-radius: 50%; justify-content: center; align-items: center; text-align: center; padding: 1.75rem; isolation: isolate; }
+  .eco-core::before {
+    content: ""; position: absolute; inset: -6px; border-radius: inherit; z-index: -1; padding: 3px; pointer-events: none;
+    background: conic-gradient(from var(--film), #FFB8D6, #FFDDB5, #CFF2BE, #B2E3F4, #C6BDFF, #F4BDEB, #FFB8D6);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    animation: film 9s linear infinite;
+  }
+  .eco-node { width: clamp(12rem, 18vw, 14.5rem); }
+  .eco-gate { white-space: nowrap; box-shadow: var(--shadow-dark); }
+}
+@keyframes eco-flow { to { stroke-dashoffset: -280; } }
+@media (prefers-reduced-motion: reduce) { .eco-spark { display: none; } }
+/* stacked map: each gate sits right after the stage it follows */
+@media (max-width: 57.99rem) {
+  .eco { display: flex; flex-direction: column; }
+  .eco > div:nth-of-type(2) { order: 1; } .eco > div:nth-of-type(3) { order: 2; }
+  .eco > span:nth-of-type(1) { order: 3; } .eco > div:nth-of-type(4) { order: 4; }
+  .eco > span:nth-of-type(2) { order: 5; } .eco > div:nth-of-type(5) { order: 6; }
+  .eco > div:nth-of-type(6) { order: 7; }
+  .eco-gate { align-self: flex-start; }
 }
