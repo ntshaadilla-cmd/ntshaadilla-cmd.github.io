@@ -317,7 +317,7 @@
     if (!gsap || reduce) return;
     if (window.ScrollTrigger) gsap.registerPlugin(window.ScrollTrigger);
     var ease = "power3.out";
-    gsap.from("[data-hero]", { y: 24, opacity: 0, duration: 0.9, ease: ease, stagger: 0.08 });
+    gsap.from("[data-hero]", { y: 16, opacity: 0, duration: 0.5, ease: ease, stagger: 0.06 });
     if (!window.ScrollTrigger) return;
     gsap.utils.toArray("[data-reveal]").forEach(function (el) {
       gsap.from(el, { y: 36, opacity: 0, duration: 0.9, ease: ease, scrollTrigger: { trigger: el, start: "top 88%", once: true } });

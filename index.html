@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..800;1,300..600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body class="page-home">
 <canvas class="marble" aria-hidden="true"></canvas>
@@ -38,7 +38,7 @@
       <a href="about.html" data-sound>About</a>
     </div>
     <div class="nav-tools">
-      <button class="sound-toggle" type="button" aria-pressed="true" aria-label="Sound effects on" data-sound-toggle>
+      <button class="sound-toggle" type="button" aria-pressed="true" aria-label="Sound effects on" title="Sound on or off. The bubbles pop." data-sound-toggle>
         <svg viewBox="0 0 20 20" aria-hidden="true"><path class="spk" d="M3 8h3l4-3.5v11L6 12H3z"/><path class="wave" d="M13 7.2a4 4 0 0 1 0 5.6M15.2 5a7 7 0 0 1 0 10"/><path class="mute" d="M13 7.5l5 5m0-5l-5 5"/></svg>
         <span>Sound</span>
       </button>
@@ -54,25 +54,29 @@
   <section class="hero" data-bubbles>
     <div class="bubbles" aria-hidden="true"></div>
     <div class="wrap hero-inner">
-      <p class="eyebrow" data-hero>B2B marketing &middot; Trelleborg Marine &amp; Infrastructure &middot; Singapore</p>
-      <h1 data-hero>Marketing for the systems behind ports, terminals and vessels.</h1>
-      <p class="lead" data-hero>I'm Natasha Adilla. I plan and run go-to-market, LinkedIn, paid media, corporate video and the AI tools behind our content, for products specified by engineers, port authorities and terminal operators.</p>
-      <div class="actions" data-hero>
-        <a class="pill pill--primary" href="#explore" data-sound>Explore the work</a>
+      <div class="hero-copy">
+        <p class="eyebrow" data-hero>B2B marketing &middot; Trelleborg Marine &amp; Infrastructure &middot; Singapore</p>
+        <h1 data-hero>Marketing for the systems behind ports, terminals and vessels.</h1>
+        <p class="lead" data-hero>I'm Natasha Adilla. I plan and run go-to-market, LinkedIn, paid media, corporate video and the AI tools behind our content, for products specified by engineers, port authorities and terminal operators.</p>
+        <div class="actions" data-hero>
+          <a class="pill pill--primary" href="#featured" data-sound>Explore the work</a>
+        </div>
       </div>
-      <p class="hint" data-hero>Tip: the bubbles pop.</p>
+      <a class="hero-work glass" href="video.html" data-sound data-hero>
+        <video src="images/v-latam-loop.mp4" poster="images/v-latam-poster.jpg" width="1280" height="720" muted loop playsinline preload="metadata" data-autoplay aria-label="Opening shots of the Spanish corporate profile: a technician at a container port, then an aerial view of a port city."></video>
+        <span class="hero-work-cap"><b>Corporate profile, in Spanish</b> Made in-house for Latin America</span>
+      </a>
     </div>
   </section>
 
   <section class="wrap results" aria-label="Results">
-    <ol class="stats" data-reveal-group>
-      <li class="stat glass"><span class="n">30,110</span><span class="what">followers on the company page</span></li>
-      <li class="stat glass"><span class="n">+17.3%</span><span class="what">follower growth year on year</span></li>
-      <li class="stat glass"><span class="n">13.9%</span><span class="what">average engagement rate; 17.5% on the Gas Transfer page</span></li>
-      <li class="stat glass"><span class="n">+85%</span><span class="what">LinkedIn followers over three years</span></li>
-      <li class="stat glass"><span class="n">7</span><span class="what">Latin American markets in one go-to-market programme</span></li>
+    <ol class="stats stats--lead" data-reveal-group>
+      <li class="stat stat--lead glass"><span class="n">5&times;</span><span class="what">forecast reach on the SafePilot launch, with 11 marketing-qualified leads inside the cost-per-lead benchmark</span><a class="more" href="campaigns.html#safepilot" data-sound>See the launch</a></li>
+      <li class="stat glass"><span class="n">7</span><span class="what">Latin American markets in one go-to-market programme, launched on schedule</span></li>
+      <li class="stat glass"><span class="n">+20.3%</span><span class="what">online B2B sales at Ansac after rebuilding the email programme</span></li>
+      <li class="stat glass"><span class="n">30,110</span><span class="what">followers on the company page, up 85% in three years</span></li>
+      <li class="stat glass"><span class="n">13.9%</span><span class="what">average LinkedIn engagement rate; 17.5% on the Gas Transfer page</span></li>
     </ol>
-    <p class="stats-cap">Follower count as of November 2026. Growth and engagement are year to date September 2026 against the same period in 2025.</p>
   </section>
 
   <section class="section" id="new">
@@ -98,35 +102,34 @@
     </div>
   </section>
 
+  <section class="section" id="featured">
+    <div class="wrap">
+      <article class="feature glass" data-reveal>
+        <figure class="media">
+          <img src="images/01-latam-toolkit.jpg" width="1600" height="1003" alt="Two pages from the Spanish sales toolkit: gas transfer optimisation and gas transfer equipment systems." loading="lazy">
+        </figure>
+        <div class="body">
+          <p class="meta">Featured case study &middot; Go-to-market &middot; 2025 to now</p>
+          <h3>Latin America: one programme for our local team and partner agents.</h3>
+          <p>Brazil, Chile, Peru, Colombia, Mexico, Argentina and Paraguay, across four buyer segments. Research first, then Spanish and Portuguese originals built for how the local sales team and our agents sell in each market.</p>
+          <ul class="chips"><li>7 markets</li><li>4 buyer segments</li><li>Spanish + Portuguese originals</li><li>Launched on schedule</li></ul>
+          <a class="more" href="latam-gtm.html" data-sound>Read the case study</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <section class="section" id="explore">
     <div class="wrap">
-      <header class="sec-head" data-reveal><h2>Find your way around</h2><p>Everything is grouped by type of work. Each page opens with a short list of what's on it.</p></header>
-      <div class="explore">
-        <a class="ex-card glass" href="campaigns.html" data-sound data-reveal>
-          <img src="images/h-latam-es.jpg" width="1348" height="704" alt="" loading="lazy">
-          <h3>Campaigns</h3><p>LATAM go-to-market, the paid social funnel, the SafePilot launch and Meet the Pioneers.</p><span class="more">Open</span>
-        </a>
-        <a class="ex-card glass" href="social.html" data-sound data-reveal>
-          <img src="images/li-maritime-india.jpg" width="790" height="578" alt="" loading="lazy">
-          <h3>Social media</h3><p>Screenshots of the latest posts, results for both LinkedIn pages, and the creative behind them.</p><span class="more">Open</span>
-        </a>
-        <a class="ex-card glass" href="video.html" data-sound data-reveal>
-          <img src="images/v-sb-38.jpg" width="640" height="360" alt="" loading="lazy">
-          <h3>Corporate and AI video</h3><p>The Spanish corporate profile with a sound-on preview, its storyboard, and the event reels.</p><span class="more">Open</span>
-        </a>
-        <a class="ex-card glass" href="ai.html" data-sound data-reveal>
-          <img src="images/h-brief-angles.jpg" width="1200" height="720" alt="" loading="lazy">
-          <h3>AI desk</h3><p>How a month of content is planned and made: the brief, the skills and the approval steps.</p><span class="more">Open</span>
-        </a>
-        <a class="ex-card glass" href="earlier.html" data-sound data-reveal>
-          <img src="images/p-bam-getbrighter.jpg" width="1280" height="720" alt="" loading="lazy">
-          <h3>Earlier work</h3><p>Social media and video from Blue Ant Media, Vuulr, SUEZ and Ansac Technology.</p><span class="more">Open</span>
-        </a>
-        <a class="ex-card glass" href="about.html" data-sound data-reveal>
-          <img src="images/p-bam-makeful-1.jpg" width="900" height="900" alt="" loading="lazy">
-          <h3>About</h3><p>Career from 2019, the toolkit I work in, languages and education.</p><span class="more">Open</span>
-        </a>
-      </div>
+      <header class="sec-head" data-reveal><h2>Everything else</h2></header>
+      <ul class="index glass" data-reveal-group>
+        <li><a href="campaigns.html" data-sound><b>Campaigns</b><span>LATAM go-to-market, the paid social funnel, the SafePilot launch and Meet the Pioneers.</span></a></li>
+        <li><a href="social.html" data-sound><b>Social media</b><span>The latest posts from both LinkedIn pages, their results and the creative behind them.</span></a></li>
+        <li><a href="video.html" data-sound><b>Corporate and AI video</b><span>The Spanish corporate profile, its storyboard and the event reels.</span></a></li>
+        <li><a href="ai.html" data-sound><b>AI desk</b><span>How a month of content is planned and made: the brief, the skills and the approval steps.</span></a></li>
+        <li><a href="earlier.html" data-sound><b>Earlier work</b><span>Social media and video from Blue Ant Media, Vuulr, SUEZ and Ansac Technology.</span></a></li>
+        <li><a href="about.html" data-sound><b>About</b><span>Career from 2019, the toolkit I work in, languages and education.</span></a></li>
+      </ul>
     </div>
   </section>
 </main>
@@ -145,6 +148,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="site.js?v=10" defer></script>
+<script src="site.js?v=11" defer></script>
 </body>
 </html>
