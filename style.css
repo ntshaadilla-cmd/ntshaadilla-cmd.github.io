@@ -739,3 +739,14 @@ body.cs .bubbles { z-index: 0; }
 .explainer-copy h2 { margin-bottom: .6em; }
 .explainer-copy p { max-width: 52ch; color: var(--ink-soft); }
 .explainer-copy .chips { margin-top: 1.4rem; }
+
+/* AI desk: the everyday work that runs through the system */
+.work-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 40rem) { .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 64rem) { .work-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.work-card { display: flex; flex-direction: column; padding: clamp(1.25rem, 2.5vw, 1.6rem); border-radius: var(--r-md); }
+.work-card h3 { margin-bottom: .5rem; }
+.work-card p { color: var(--ink-soft); font-size: .95rem; }
+.work-card .decide { margin-top: auto; padding-top: 1rem; display: flex; gap: .6rem; align-items: baseline; color: var(--ink); font-size: .88rem; }
+.work-card .decide span { flex: none; padding: .15rem .55rem; border-radius: var(--r-pill); background: var(--glass-dark); color: #fff; font-size: .72rem; letter-spacing: .02em; }
+@media (min-width: 64rem) { .flow--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
