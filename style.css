@@ -731,10 +731,11 @@ body.cs .bubbles { z-index: 0; }
 .vid-grid--wide video { aspect-ratio: 16 / 9; }
 @media (min-width: 46rem) { .vid-grid--wide { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
-/* the AI explainer: a 4:5 cut beside how it is made, no bigger than the work above */
-.explainer { display: grid; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
-@media (min-width: 52rem) { .explainer { grid-template-columns: minmax(0, 21rem) minmax(0, 1fr); } }
-.explainer .shot-card { margin: 0; max-width: 21rem; justify-self: center; width: 100%; }
+/* the AI explainer series: copy, then the episodes side by side, each no bigger than the work above */
+.explainer { display: grid; gap: clamp(1.25rem, 3vw, 2rem); align-items: start; }
+@media (min-width: 40rem) { .explainer { grid-template-columns: repeat(2, minmax(0, 1fr)); } .explainer-copy { grid-column: 1 / -1; } }
+@media (min-width: 64rem) { .explainer { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1fr); align-items: center; } .explainer-copy { grid-column: auto; } }
+.explainer .shot-card { margin: 0; }
 .explainer video { display: block; aspect-ratio: 4 / 5; object-fit: cover; }
 .explainer-copy h2 { margin-bottom: .6em; }
 .explainer-copy p { max-width: 52ch; color: var(--ink-soft); }
@@ -750,3 +751,5 @@ body.cs .bubbles { z-index: 0; }
 .work-card .decide { margin-top: auto; padding-top: 1rem; display: flex; gap: .6rem; align-items: baseline; color: var(--ink); font-size: .88rem; }
 .work-card .decide span { flex: none; padding: .15rem .55rem; border-radius: var(--r-pill); background: var(--glass-dark); color: #fff; font-size: .72rem; letter-spacing: .02em; }
 @media (min-width: 64rem) { .flow--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+.vid-grid + .vid-grid { margin-top: 1.25rem; }
