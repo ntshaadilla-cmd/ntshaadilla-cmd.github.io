@@ -729,7 +729,7 @@ body.cs .bubbles { z-index: 0; }
 .vid-grid .shot-card { margin: 0; }
 .vid-grid video { display: block; aspect-ratio: 1; object-fit: cover; }
 .vid-grid--wide video { aspect-ratio: 16 / 9; }
-@media (min-width: 46rem) and (max-width: 69.99rem) { .vid-grid--wide { grid-template-columns: repeat(2, minmax(0, 1fr)); } .vid-grid--wide .shot-card:first-child { grid-column: 1 / -1; } }
+@media (min-width: 46rem) { .vid-grid--wide { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* the AI explainer: a 4:5 cut beside how it is made, no bigger than the work above */
 .explainer { display: grid; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
