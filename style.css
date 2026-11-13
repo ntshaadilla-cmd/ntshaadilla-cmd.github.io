@@ -753,3 +753,9 @@ body.cs .bubbles { z-index: 0; }
 @media (min-width: 64rem) { .flow--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 
 .vid-grid + .vid-grid { margin-top: 1.25rem; }
+
+/* Sub-heads inside a section */
+.sub-head { margin: clamp(2.25rem, 5vw, 3.25rem) 0 1.25rem; max-width: 48rem; }
+.sub-head h3 { font-size: clamp(1.3rem, 1.1rem + .8vw, 1.6rem); margin-bottom: .3em; }
+.sub-head p { color: var(--ink-soft); }
+.notes + .chips, .work-grid + .chips { margin-top: 1.5rem; }
